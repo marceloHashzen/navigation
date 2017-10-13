@@ -13,7 +13,7 @@ export const HomeStack = StackNavigator({
         screen: Home,
         navigationOptions: {
             title: 'Home',
-            headerTitleStyle :{textAlign: 'center',alignSelf:'center'},
+            headerTitleStyle: {textAlign: 'center',alignSelf:'center'},
         },
     },
 });
@@ -23,7 +23,7 @@ export const NotificationsStack = StackNavigator({
         screen: Notifications,
         navigationOptions: {
             title: 'Notifications',
-            headerTitleStyle :{textAlign: 'center',alignSelf:'center'},
+            headerTitleStyle: {textAlign: 'center',alignSelf:'center'},
         },
     },
 });
@@ -33,7 +33,7 @@ export const ConfigStack = StackNavigator({
         screen: Config,
         navigationOptions: {
             title: 'Config',
-            headerTitleStyle :{textAlign: 'center',alignSelf:'center'},
+            headerTitleStyle: {textAlign: 'center',alignSelf:'center'},
         },
     },
 });
