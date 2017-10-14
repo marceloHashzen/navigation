@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { NavigationActions } from 'react-navigation';
 
 class Login extends Component {
     handleLogin() {
-        this.setState({ signedIn: true });
-        this.props.navigation.navigate('Welcome');
+        // this.setState({ signedIn: true });
+
+        const resetAction = NavigationActions.reset({
+            index: 0,
+            actions: [
+                NavigationActions.navigate({ routeName: 'Welcome' }),
+            ],
+        });
+
+        this.props.navigation.dispatch(resetAction);
     }
 
     render() {
