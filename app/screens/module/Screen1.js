@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-class Home extends Component {
+class Screen1 extends Component {
     handleLogin() {
-        this.props.navigation.navigate('Screen1');
+        this.props.navigation.navigate('Screen2');
     }
 
     render() {
         return (
             <View style={styles.main}>
-                <Text>Home screen</Text>
-    
+                <Text>Module Screen 1</Text>
+
                 <TouchableOpacity onPress={() => this.handleLogin()}>
-                    <Text>Go to Screen 1</Text>
+                    <Text>Go to Screen 2</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Home;
+export default Screen1;

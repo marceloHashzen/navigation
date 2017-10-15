@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text, Platform } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
@@ -7,6 +8,28 @@ import Welcome from '../screens/Welcome';
 import Home from '../screens/Home';
 import Notifications from '../screens/Notifications';
 import Config from '../screens/Config';
+import Screen1 from '../screens/module/Screen1';
+import Screen2 from '../screens/module/Screen2';
+
+export const ModuleStack = StackNavigator({
+    Screen1: {
+        screen: Screen1,
+        navigationOptions: {
+            title: 'Screen 1',
+            headerTitleStyle: {textAlign: 'center', alignSelf:'center'},
+        },
+    },
+    Screen2: {
+        screen: Screen2,
+        navigationOptions: {
+            title: 'Screen 2',
+            headerTitleStyle: {textAlign: 'center', alignSelf:'center'},
+        },
+    },
+},
+{
+    headerMode: 'none',
+});
 
 export const HomeStack = StackNavigator({
     Home: {
@@ -15,6 +38,9 @@ export const HomeStack = StackNavigator({
             title: 'Home',
             headerTitleStyle: {textAlign: 'center',alignSelf:'center'},
         },
+    },
+    Module: {
+        screen: ModuleStack,
     },
 });
 
