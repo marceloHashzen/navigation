@@ -8,10 +8,22 @@ import Welcome from '../screens/Welcome';
 import Home from '../screens/Home';
 import Notifications from '../screens/Notifications';
 import Config from '../screens/Config';
-import Screen1 from '../screens/module/Screen1';
-import Screen2 from '../screens/module/Screen2';
+import Screen1 from '../screens/module1/Screen1';
+import Screen2 from '../screens/module1/Screen2';
+import Screen3 from '../screens/module2/Screen3';
+import Screen4 from '../screens/module2/Screen4';
 
-export const ModuleStack = StackNavigator({
+export const HomeScreen = StackNavigator({
+    Home: {
+        screen: Home,
+        navigationOptions: {
+            title: 'Home',
+            headerTitleStyle: {textAlign: 'center',alignSelf:'center'},
+        },
+    },
+});
+
+export const Module1Stack = StackNavigator({
     Screen1: {
         screen: Screen1,
         navigationOptions: {
@@ -26,22 +38,38 @@ export const ModuleStack = StackNavigator({
             headerTitleStyle: {textAlign: 'center', alignSelf:'center'},
         },
     },
-},
-{
-    headerMode: 'none',
+});
+
+export const Module2Stack = StackNavigator({
+    Screen3: {
+        screen: Screen3,
+        navigationOptions: {
+            title: 'Screen 3',
+            headerTitleStyle: {textAlign: 'center', alignSelf:'center'},
+        },
+    },
+    Screen4: {
+        screen: Screen4,
+        navigationOptions: {
+            title: 'Screen 4',
+            headerTitleStyle: {textAlign: 'center', alignSelf:'center'},
+        },
+    },
 });
 
 export const HomeStack = StackNavigator({
     Home: {
-        screen: Home,
-        navigationOptions: {
-            title: 'Home',
-            headerTitleStyle: {textAlign: 'center',alignSelf:'center'},
-        },
+        screen: HomeScreen,
     },
-    Module: {
-        screen: ModuleStack,
+    Module1: {
+        screen: Module1Stack,
     },
+    Module2: {
+        screen: Module2Stack,
+    },
+},
+{
+    headerMode: 'none',
 });
 
 export const NotificationsStack = StackNavigator({
