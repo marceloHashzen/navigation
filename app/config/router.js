@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, Platform } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
+import { NavigationActions } from 'react-navigation';
 
 import Login from '../screens/Login';
 import Welcome from '../screens/Welcome';
@@ -95,9 +96,12 @@ export const ConfigStack = StackNavigator({
 export const MainTabs = TabNavigator({
     Home: {
         screen: HomeStack,
-        navigationOptions: {
-            tabBarIcon: ({ tintColor }) => <Icon name="home" size={22} color={tintColor} />
-        },
+        navigationOptions: ({ navigation }) => ({
+            tabBarIcon: ({ tintColor }) => <Icon name="home" size={22} color={tintColor} />,
+            tabBarOnPress: (tab, jumpToIndex) => {
+                navigation.navigate('Home');
+            },
+        }),
     },
     Notifications: {
         screen: NotificationsStack,
@@ -130,7 +134,7 @@ export const MainTabs = TabNavigator({
         inactiveTintColor: '#666666',
         showLabel: false,
         showIcon: true,
-    },                                                       
+    },                                                   
 });
 
 export const AppNavigator = (signedIn = false) => {
